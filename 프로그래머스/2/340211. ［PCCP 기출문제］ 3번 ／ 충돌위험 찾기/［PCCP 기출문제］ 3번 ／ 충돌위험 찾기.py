@@ -44,12 +44,12 @@ def solution(points, routes):
     # print(individual_routes)
     # print(max_route)
     for j in range(max_route):
-        new_cnt = []
-        counted = []
+        new_cnt = set()
+        counted = set()
         for i in range(len(individual_routes)):
             if individual_routes[i][j] not in new_cnt:
-                new_cnt.append(individual_routes[i][j])
+                new_cnt.add(individual_routes[i][j])
             elif individual_routes[i][j] not in counted and individual_routes[i][j] in new_cnt and individual_routes[i][j] != (0,0):
                 answer += 1
-                counted.append((individual_routes[i][j]))
+                counted.add((individual_routes[i][j]))
     return answer
